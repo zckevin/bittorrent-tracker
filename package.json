@@ -12,7 +12,6 @@
   },
   "browser": {
     "./lib/common-node.js": false,
-    "./lib/client/http-tracker.js": false,
     "./lib/client/udp-tracker.js": false,
     "./server.js": false
   },
