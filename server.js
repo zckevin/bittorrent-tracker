@@ -68,6 +68,10 @@ class Server extends EventEmitter {
       process.nextTick(() => {
         this.http.on('request', (req, res) => {
           if (res.headersSent) return
+          res.setHeader('Access-Control-Allow-Origin', '*')
+          res.setHeader('Access-Control-Allow-Headers', '*')
+          res.setHeader('Access-Control-Allow-Credentials', 'true')
+          res.setHeader('Access-Control-Allow-Methods', '*')
           this.onHttpRequest(req, res)
         })
       })
